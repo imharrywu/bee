@@ -176,6 +176,7 @@ func prepareTransaction(ctx context.Context, request *TxRequest, from common.Add
 		if err != nil {
 			return nil, err
 		}
+		gasPrice.Mul(big.NewInt(3), gasPrice)
 	} else {
 		gasPrice = request.GasPrice
 	}
